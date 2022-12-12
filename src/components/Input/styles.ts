@@ -4,15 +4,19 @@ const StyledInput = styled.input`
   display: flex;
   align-items: center;
   text-align: center;
+
   width: 100%;
   height: 68px;
-  background: #fff;
-  border-radius: 30px;
+  margin-bottom: 33px;
+
   font-size: 18px;
   line-height: 1.44;
   letter-spacing: -0.3px;
   color: rgba(117, 108, 108, 0.6);
-  margin-bottom: 33px;
+
+  background: #fff;
+  border-radius: 30px;
+
   @media (max-width: 744px) {
     margin-bottom: 17px;
   }

@@ -1,11 +1,11 @@
-import { IOption } from "../../types";
 import { styles } from "./styles";
-import Select, { ActionMeta } from "react-select";
+import Select from "react-select";
 import { options } from "../Form/Form";
+import { IOption } from "../../types";
 
 interface IProps {
   value: IOption;
-  onChange: (event: IOption | any, actionMeta: ActionMeta<IOption | unknown>) => void;
+  onChange: (event: IOption | null) => void;
 }
 
 export const CustomSelect = ({ value, onChange }: IProps) => {
@@ -16,6 +16,7 @@ export const CustomSelect = ({ value, onChange }: IProps) => {
       options={options}
       isSearchable={false}
       styles={styles}
+      isMulti={false}
     />
   );
 };

@@ -1,10 +1,15 @@
-import { IButton } from "../../types";
 import { StyledButton } from "../Button/styles";
 
-export const Button = ({ type, label, disabled, onClick }: IButton) => {
+export interface IButton {
+  type: "button" | "submit" | "reset";
+  label: string;
+  isDisabled: boolean;
+  onClick: () => void;
+}
+
+export const Button = ({ type, label, isDisabled, onClick }: IButton) => {
   return (
-    <StyledButton type={type} disabled={disabled} onClick={onClick}>
-      {" "}
+    <StyledButton type={type} disabled={isDisabled} onClick={onClick}>
       {label}
     </StyledButton>
   );

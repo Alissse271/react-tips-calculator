@@ -1,6 +1,7 @@
 import { StylesConfig } from "react-select";
+import { IOption } from "../../types";
 
-export const styles: StylesConfig = {
+export const styles: StylesConfig<IOption> = {
   control: (baseStyles, state) => ({
     ...baseStyles,
     borderColor: state.isFocused ? "white" : "white",

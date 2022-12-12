@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ActionMeta } from "react-select";
+import { SingleValue } from "react-select";
 import { useInput } from "../../hooks/useInput";
 import { IOption } from "../../types";
 import { Button } from "../Button/Button";
@@ -14,28 +14,28 @@ export const options: IOption[] = [
 ];
 
 export const Form = () => {
+  const [total, setTotal] = useState("0.00");
+  const [isDisabled, setDisabled] = useState(false);
+  const [selectOption, setSelectOption] = useState(options[0]);
+
   const bill = useInput();
   const persons = useInput();
 
-  const [total, setTotal] = useState("0.00");
-  const [isValid, setValid] = useState(false);
-  const [selectOption, setSelectOption] = useState(options[0]);
-
-  const handleChangeSelect = (event: IOption | any, actionMeta: ActionMeta<IOption | unknown>) => {
-    setSelectOption(event);
-  };
-
-  const validate = () => {
-    if (bill.value.length && persons.value.length) {
-      return true;
-    }
-    return false;
-  };
-
   useEffect(() => {
-    const isValid = validate();
-    setValid(isValid);
+    const isDisabled = () => {
+      if (bill.value.length && persons.value.length) {
+        return false;
+      }
+      return true;
+    };
+    setDisabled(isDisabled);
   }, [bill, persons]);
+
+  const handleChangeSelect = (option: SingleValue<typeof selectOption>) => {
+    if (option) {
+      setSelectOption(option);
+    }
+  };
 
   const handleCountTotal = () => {
     const total = (+bill.value + (+bill.value * selectOption.value) / 100) / +persons.value;
@@ -53,7 +53,7 @@ export const Form = () => {
       <Button
         type={"button"}
         label={"Ohhhoooo 🍻"}
-        disabled={!isValid}
+        isDisabled={isDisabled}
         onClick={handleCountTotal}
       />
     </StyledForm>

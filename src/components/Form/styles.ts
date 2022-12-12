@@ -4,10 +4,13 @@ const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  width: 459px;
+
   margin: 0 auto;
   padding-top: 203px;
   padding-bottom: 138px;
-  width: 459px;
+
   @media (max-width: 744px) {
     width: 332px;
     padding-top: 236px;
@@ -19,33 +22,40 @@ const StyledForm = styled.form`
   }
 `;
 const Title = styled.h1`
+  margin-bottom: 45px;
+
   font-size: 40px;
   line-height: 1.45;
   text-align: center;
   letter-spacing: -0.3px;
-  margin-bottom: 45px;
+
   @media (max-width: 744px) {
     font-size: 24px;
   }
 `;
 const Subtitle = styled.h3`
+  margin-bottom: 45px;
+
   font-size: 32px;
   line-height: 1.18;
   text-align: center;
   letter-spacing: -0.3px;
   color: rgba(117, 108, 108, 0.57);
-  margin-bottom: 45px;
+
   @media (max-width: 744px) {
     font-size: 24px;
   }
 `;
 const TotalAmount = styled.p`
+  align-self: flex-start;
+
+  margin: 45px 0;
+
   font-weight: 500;
   font-size: 24px;
   line-height: 1.46;
   letter-spacing: -0.3px;
-  margin: 45px 0;
-  align-self: flex-start;
+
   @media (max-width: 414px) {
     font-size: 18px;
   }

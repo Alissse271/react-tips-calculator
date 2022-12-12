@@ -1,17 +1,19 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
 
 a {
-    text-decoration: none;
-    color: inherit;
     padding: 0;
     margin: 0;
+    
     font-size: 16px;
+    text-decoration: none;
+    color: inherit;
+    
 }
 
 * {
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
     font-family: 'Open Sans', sans-serif;
     padding: 0;
     margin: 0;
@@ -21,6 +23,7 @@ a {
 
 button {
     display: inline-block;
+
     box-shadow: none;
     border-color: transparent;
     background: none;
@@ -28,11 +31,13 @@ button {
 }
 
 h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+
     font-size: inherit;
     font-weight: inherit;
     line-height: inherit;
-    margin: 0;
-    padding: 0;
+
 }
 
 li {
