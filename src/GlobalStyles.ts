@@ -10,7 +10,6 @@ a {
     font-size: 16px;
     text-decoration: none;
     color: inherit;
-    
 }
 
 * {
@@ -27,6 +26,7 @@ button {
     box-shadow: none;
     border-color: transparent;
     background: none;
+
     cursor: pointer;
 }
 
@@ -37,7 +37,6 @@ h1, h2, h3, h4, h5, h6, p {
     font-size: inherit;
     font-weight: inherit;
     line-height: inherit;
-
 }
 
 li {
